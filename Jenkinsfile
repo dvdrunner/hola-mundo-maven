@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git 'https://github.com/liranfar/jenkinsFile-helloWorld.git'
+                git 'https://github.com/dvdrunner/hola-mundo-maven.git'
             }
         }
 
@@ -26,14 +26,14 @@ pipeline {
                 }
             }
         }
-        stage('Deploy to Nexus') {
+/*         stage('Deploy to Nexus') {
             steps {
                 configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')]) {
                     sh "mvn -s $SETTINGS deploy  -DskipTests -Dnexus-releases-url=${env.NEXUS_RELEASES_URL} -Dnexus-snapshots-url=${env.NEXUS_SNAPSHOTS_URL}"
                 }
 
             }
-        }
+        } */
 
         //TODO: docker build,push
         //TODO: deploy docker image
