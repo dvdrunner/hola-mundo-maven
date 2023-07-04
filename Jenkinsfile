@@ -26,6 +26,7 @@ pipeline {
                 }
             }
         }
+        
 /*         stage('Deploy to Nexus') {
             steps {
                 configFileProvider([configFile(fileId: 'our_settings', variable: 'SETTINGS')]) {
